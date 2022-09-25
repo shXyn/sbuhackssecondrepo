@@ -3,21 +3,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="splash-screen">
+            <div id="splash-welcome"><h6>Welcome to the... <br/> ASL Translator</h6></div>
+            <div id="splash-message"> Helping to close the gap between the deaf and hearing community 
+            <br/>
+            Interpreter:<br/>
+            </div>
+        <div id="splash-student"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <strong>Site developed by some Hackers ©</strong></div>
     </div>
   );
 }
