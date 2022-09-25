@@ -32,6 +32,8 @@ import sys
 from pathlib import Path
 
 import torch
+from flask import FLask, render_template
+import os
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -171,13 +173,17 @@ def run(
             # Stream results
             im0 = annotator.result()
             if view_img:
-                if platform.system() == 'Linux' and p not in windows:
-                    windows.append(p)
-                    cv2.namedWindow(str(p), cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)  # allow window resize (Linux)
-                    cv2.resizeWindow(str(p), im0.shape[1], im0.shape[0])
-                cv2.imshow(str(p), im0)
-                cv2.waitKey(1)  # 1 millisecond
-
+                # if platform.system() == 'Linux' and p not in windows:
+                #     windows.append(p)
+                #     cv2.namedWindow(str(p), cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)  # allow window resize (Linux)
+                #     cv2.resizeWindow(str(p), im0.shape[1], im0.shape[0])
+                # cv2.imshow(str(p), im0)
+                # cv2.waitKey(1)  # 1 millisecond
+                # ----------------------------------
+                # app = Flask(__name__)
+                # @app.route('../my_app')
+                # @app.route('/index')
+                render_template("../my_app.index.html", im0)
             # Save results (image with detections)
             if save_img:
                 if dataset.mode == 'image':
